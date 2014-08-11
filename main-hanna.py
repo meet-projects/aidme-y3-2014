@@ -11,6 +11,12 @@ sm=ScreenManager()
 class Backgruond(Image):
     pass
 
+class SignUpB(Image):
+    pass
+
+class Logo(Image):
+    pass
+
 class LogIn(Screen):
     pass
 
