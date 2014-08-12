@@ -25,23 +25,28 @@
 				
 		BoxLayout:
 			orientation: 'horizontal'
-			Button:
-				id: 'ProfileB'
-				size:80,60
-				size_hint:0.2,None
-				text:'Profile'
-				background_normal: 'ff242f.png'
-				background_down: 'ab1e25.png'
-				border: (30,30,30,30)
-				on_press: app.submit_clicked("ProfileB")
-			Button:
-				id: 'InstructionsB'
-				size:80,60
-				size_hint:0.2,None
-				text:'instructions'
-				background_normal: 'ff242f.png'
-				background_down: 'ab1e25.png'
-				on_press: app.submit_clicked("InstructionsB")
+			AnchorLayout:
+				anchor_y:'bottom'
+				anchor_x:'left'
+				Button:
+					id: 'ProfileB'
+					size:80,60
+					size_hint:0.999,None
+					text:'Profile'
+					background_normal: 'ff242f.png'
+					background_down: 'ab1e25.png'
+					on_press: app.submit_clicked("ProfileB")
+			AnchorLayout:
+				anchor_y:'bottom'
+				anchor_x:'right'
+				Button:
+					id: 'MapB'
+					size:80,60
+					size_hint:0.999,None
+					text:'Map'
+					background_normal: 'ff242f.png'
+					background_down: 'ab1e25.png'
+					on_press: app.submit_clicked("InstructionsB")
 
 <-Background>:
 	canvas:

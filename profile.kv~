@@ -37,10 +37,10 @@
 				anchor_y:'bottom'
 				anchor_x:'left'
 				Button:
-					id: 'ProfileB'
+					id: 'HomeB'
 					size:80,60
 					size_hint:0.999,None
-					text:'Profile'
+					text:'Home'
 					background_normal: 'ff242f.png'
 					background_down: 'ab1e25.png'
 					border: (30,30,30,30)
