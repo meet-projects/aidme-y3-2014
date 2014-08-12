@@ -35,6 +35,7 @@
 					text:'Profile'
 					background_normal: 'ff242f.png'
 					background_down: 'ab1e25.png'
+					on_press: app.submit_clicked("ProfileB")
 			AnchorLayout:
 				anchor_y:'bottom'
 				anchor_x:'right'
@@ -45,6 +46,7 @@
 					text:'Map'
 					background_normal: 'ff242f.png'
 					background_down: 'ab1e25.png'
+					on_press: app.submit_clicked("InstructionsB")
 
 
 
@@ -77,21 +79,26 @@
 			pos: 50,50
 	BoxLayout:
 		orientation: 'horizontal'
+		AnchorLayout:
+			anchor_y:'bottom'
+			anchor_x:'left'
 		Button:
 			text: "Login"
 			size: 80,60
-			size_hint:0.4,0
+			size_hint:0.999,None
 			background_normal: 'ff242f.png'
 			background_down: "eb1e25.png"
 			on_press: app.submit_clicked("LogInB")
-	
-		Button:
-			text: "Sign Up"
-			size: 80,60
-			size_hint:0.4,0
-			background_normal: 'ff242f.png'
-			background_down: "eb1e25.png"
-			on_press: app.submit_clicked("SignUpB")
+		AnchorLayout:
+			anchor_y:'bottom'
+			anchor_x:'right'
+			Button:
+				text: "Sign Up"
+				size: 80,60
+				size_hint:0.999,None
+				background_normal: 'ff242f.png'
+				background_down: "eb1e25.png"
+				on_press: app.submit_clicked("SignUpB")
 
 
 <ProfileScreen>:
@@ -121,6 +128,7 @@
 					text:'Log Out'
 					background_normal: 'ff242f.png'
 					background_down: 'ab1e25.png'
+					on_press: app.submit_clicked("LogOutB")
 		AnchorLayout:
 			anchor_x:'center'
 			anchor_y:'top'
@@ -138,7 +146,7 @@
 					text:'Home'
 					background_normal: 'ff242f.png'
 					background_down: 'ab1e25.png'
-					border: (30,30,30,30)
+					on_press: app.submit_clicked("HomeB")
 			AnchorLayout:
 				anchor_y:'bottom'
 				anchor_x:'right'

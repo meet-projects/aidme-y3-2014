@@ -122,5 +122,13 @@ class AidMeApp(App):
 
 			sm.current = "SignUp"
 
+		elif id2 == "HomeB":
+
+			sm.current = "Home"
+
+		elif id2 == "LogOutB":
+
+			sm.current = "LogIn"
+
 if __name__=="__main__":
 	AidMeApp().run()

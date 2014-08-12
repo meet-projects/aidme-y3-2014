@@ -108,11 +108,11 @@ class AidMeApp(App):
 
 		elif id2 == "ProfileB":
 
-			sm.current = "General"
+			sm.current = "Profile"
 
 		elif id2 == "InstructionsB":
 
-			sm.current = "Profile"
+			sm.current = "General"
 
 		elif id2 == "LogInB":
 
