@@ -22,7 +22,6 @@
 				background_down: 'helpbutton.png'
 				on_press: app.submit_clicked("HelpB")
 
-				
 		BoxLayout:
 			orientation: 'horizontal'
 			AnchorLayout:
@@ -51,7 +50,7 @@
 					text:'Map'
 					background_normal: 'ff242f.png'
 					background_down: 'ab1e25.png'
-					on_press: app.submit_clicked("MapB")
+					on_press: app.submit_clicked("InstructionsB")
 
 
 
@@ -122,6 +121,11 @@
 				anchor_x:'left'
 				anchor_y:'top'
 				Button:
+					size: 80,60
+					size_hint: 2,None
+					background_normal:'737373.png'
+					background_down:'737373.png'
+				Button:
 					id: 'EditB'
 					size_hint:0.4,None
 					size:80,60
@@ -131,11 +135,6 @@
 			AnchorLayout:
 				anchor_x:'right'
 				anchor_y:'top'
-				Button:
-					size: 80,60
-					size_hint: 2,None
-					background_normal:'737373.png'
-					background_down:'737373.png'
 				Button:
 					id: 'LogOutB'
 					size_hint:0.4,None
@@ -180,7 +179,6 @@
 					text:'Map'
 					background_normal: 'ff242f.png'
 					background_down: 'ab1e25.png'
-					on_press: app.submit_clicked("MapB")
 
 
 <-Background>:
@@ -226,6 +224,7 @@
             texture: self.texture
             size: self.width - 600, self.height - 505
             pos: self.x -19, self.y + 245
+
 <MapScreen>:
 	MapI:
 		source: "mapwithout.png"
@@ -249,3 +248,4 @@
             texture: self.texture
             size: self.width + 54, self.height + 630
             pos: self.x - 10, self.y - 285
+
