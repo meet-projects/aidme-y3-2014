@@ -16,10 +16,11 @@
 			anchor_y:'center'
 			Button:
 				id: 'HelpB'
-				size_hint: None,None
-				size:168,168
-				background_normal: 'helpbutton.png'
-				background_down: 'helpbutton.png'
+				size_hint:0.2,None
+				size:80,60
+				text:'Help'
+				background_normal: 'ff242f.png'
+				background_down: 'ab1e25.png'
 				on_press: app.submit_clicked("HelpB")
 
 				

@@ -11,8 +11,9 @@
 				id: 'HelpB'
 				size_hint: None,None
 				size:168,168
-				background_normal: 'helpbutton.png'
-				background_down: 'ff242f.png'
+#				pos: root.width/2,root.heith/2
+#				background_normal: 'helpbutton.png'
+#				background_down: 'helpbutton.png'
 				
 		BoxLayout:
 			orientation: 'horizontal'
