@@ -1,0 +1,34 @@
+#:kivy 1.8.0
+
+<HomeScreen>:
+
+	BoxLayout:
+		orientation: 'vertical'
+		AnchorLayout:
+			anchore_x:'center'
+			anchore_y:'center'
+			Label:
+				text:'AidMe'
+		AnchorLayout:
+			anchor_x:'center'
+			anchor_y:'center'
+			Background:
+				source:'bat.jpg'
+			Button:
+				id: 'HelpB'
+				size_hint:0.2,None
+				size:80,60
+				text:'Help'
+			
+		BoxLayout:
+			orientation: 'horizontal'
+			Button:
+				id: 'ProfileB'
+				size:80,60
+				size_hint:0.2,None
+				text:'profile'
+			Button:
+				id: 'InstructionsB'
+				size:80,60
+				size_hint:0.2,None
+				text:'instructions'
