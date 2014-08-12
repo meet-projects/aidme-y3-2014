@@ -1,6 +1,6 @@
 #:kivy 1.8.0
 
-<HomeScreen>:
+<Home>:
 
 	BoxLayout:
 		orientation: 'vertical'
@@ -23,7 +23,7 @@
 				size:80,60
 				size_hint:0.2,None
 				text:'profile'
-				background_normal: 'ff242f.png'
+				background_normal: 'bat.jpg'
 			Button:
 				size:80,60
 				size_hint:0.2,None
