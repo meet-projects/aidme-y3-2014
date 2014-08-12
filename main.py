@@ -43,9 +43,13 @@ class Logo(Image):
     
     pass
 
-class LogIn(Screen):
+class Password(Image):
 
-    pass
+	pass
+
+class Email(Image):
+
+	pass
 
 class GeneralScreen (Screen):
 
