@@ -98,6 +98,64 @@
 			background_down: "eb1e25.png"
 			on_press: app.submit_clicked("SignUpB")
 
+
+<ProfileScreen>:
+	Background:
+		source: 'd7d7d7.png'
+	BoxLayout:
+		orientation: 'vertical'
+		BoxLayout:
+			orientation: 'horizontal'
+			AnchorLayout:
+				anchor_x:'left'
+				anchor_y:'top'
+				Button:
+					id: 'EditB'
+					size_hint:0.2,None
+					size:80,60
+					text:'Edit'
+					background_normal: 'ff242f.png'
+					background_down: 'ab1e25.png'
+			AnchorLayout:
+				anchor_x:'right'
+				anchor_y:'top'
+				Button:
+					id: 'LogOutB'
+					size_hint:0.2,None
+					size:80,60
+					text:'Log Out'
+					background_normal: 'ff242f.png'
+					background_down: 'ab1e25.png'
+		AnchorLayout:
+			anchor_x:'center'
+			anchor_y:'top'
+			Label:
+				text:'profile'
+		BoxLayout:
+			orientation: 'horizontal'
+			AnchorLayout:
+				anchor_y:'bottom'
+				anchor_x:'left'
+				Button:
+					id: 'HomeB'
+					size:80,60
+					size_hint:0.999,None
+					text:'Home'
+					background_normal: 'ff242f.png'
+					background_down: 'ab1e25.png'
+					border: (30,30,30,30)
+			AnchorLayout:
+				anchor_y:'bottom'
+				anchor_x:'right'
+				Button:
+					id: 'MapB'
+					size:80,60
+					size_hint:0.999,None
+					text:'Map'
+					background_normal: 'ff242f.png'
+					background_down: 'ab1e25.png'
+
+
 <-Background>:
 	canvas:
         Color:
