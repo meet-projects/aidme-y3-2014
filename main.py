@@ -38,6 +38,10 @@ def send_email():
 	s.sendmail(me, [you], msg.as_string())
 	s.quit()
 
+class GeneralScreen (Screen):
+
+	pass
+
 class Background(Image):
 	
 	pass
@@ -69,6 +73,7 @@ class AidMeApp(App):
 		Config.set('kivy','keyboard_mode','systemanddock')
 		Config.write()
 
+		self.general_screen = GeneralScreen(name="General")
 		self.home_screen = HomeScreen(name="Home")
 		self.login_screen = LogInScreen(name="LogIn")
 		self.singup_screen = SignUpScreen(name="SignUp")
@@ -77,33 +82,32 @@ class AidMeApp(App):
 		sm.add_widget(self.login_screen)
 		sm.add_widget(self.singup_screen)
 		sm.add_widget(self.profile_screen)
-
+		sm.add_widget(self.general_screen)
+		sm.current = "Home"
+		
 		return sm
 
-	def submit_clicked(self, id):
+	def submit_clicked(self, id2):
 
-		if id == "HelpB" :
-
-			pass
-
-		elif id == "ProfileB":
-
-			sm.current = "Profile"
-			self.home_screen.change
-
-		elif id == "InstructionsB":
+		if id2 == "HelpB" :
 
 			pass
 
-		elif id == "LogInB":
+		elif id2 == "ProfileB":
+
+			sm.current = "General"
+
+		elif id2 == "InstructionsB":
+
+			sm.current = "General"
+
+		elif id2 == "LogInB":
 
 			sm.current = "LogIn"
-			self.login_screen.change
 
-		elif id == "SignUpB":
+		elif id2 == "SignUpB":
 
 			sm.current = "SignUp"
-			self.login_screen.change
 
 
 

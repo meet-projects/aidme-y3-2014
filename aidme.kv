@@ -17,6 +17,7 @@
 				size_hint:0.2,None
 				size:80,60
 				text:'Help'
+				on_press: app.submit_clicked("HelpB")
 			
 		BoxLayout:
 			orientation: 'horizontal'
@@ -26,8 +27,11 @@
 				size_hint:0.2,None
 				text:'Profile'
 				background_normal: 'ff242f.png'
+				on_press: app.submit_clicked("ProfileB")
+
 			Button:
 				id: 'InstructionsB'
 				size:80,60
 				size_hint:0.2,None
 				text:'Instructions'
+				on_press: app.submit_clicked("InstructionsB")
