@@ -28,11 +28,6 @@
 				anchor_y:'bottom'
 				anchor_x:'left'
 				Button:
-					size: 80,60
-					size_hint: 2,None
-					background_normal:'737373.png'
-					background_down:'737373.png'
-				Button:
 					id: 'ProfileB'
 					size:80,60
 					size_hint:0.95,None
@@ -87,11 +82,6 @@
 			anchor_y:'bottom'
 			anchor_x:'left'
 			Button:
-				size: 80,60
-				size_hint: 2,None
-				background_normal:'737373.png'
-				background_down:'737373.png'
-			Button:
 				text: "Login"
 				size: 80,60
 				size_hint:0.95,None
@@ -121,6 +111,7 @@
 				anchor_x:'left'
 				anchor_y:'top'
 				Button:
+					text: 'Sagi'
 					size: 80,60
 					size_hint: 2,None
 					background_normal:'737373.png'
@@ -144,23 +135,12 @@
 					background_down: 'ab1e25.png'
 					on_press: app.submit_clicked("LogOutB")
 		AnchorLayout:
-			anchor_x:'center'
-			anchor_y:'top'
-			Label:
-				text:'profile'
-				color: (1,0,0,1)
-		AnchorLayout:
 			
 		BoxLayout:
 			orientation: 'horizontal'
 			AnchorLayout:
 				anchor_y:'bottom'
 				anchor_x:'left'
-				Button:
-					size: 80,60
-					size_hint: 2,None
-					background_normal:'737373.png'
-					background_down:'737373.png'
 				Button:
 					id: 'HomeB'
 					size:80,60
@@ -179,6 +159,7 @@
 					text:'Map'
 					background_normal: 'ff242f.png'
 					background_down: 'ab1e25.png'
+					on_press: app.submit_clicked("MapB")
 
 
 <-Background>:
