@@ -138,7 +138,9 @@ class AidMeApp(App):
 		elif id2 == "LogOutB":
 
 			sm.current = "LogIn"
+		
 		elif id2 == "MapB":
+		
 			sm.current = "Map"
 
 if __name__=="__main__":

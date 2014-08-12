@@ -16,21 +16,12 @@
 			anchor_y:'center'
 			Button:
 				id: 'HelpB'
-<<<<<<< HEAD
-				size_hint:None,None
-				size:265,258
-				text:''
-				background_normal: 'Red Panick Button Unpressed.png'
-				background_down: ''
-=======
 				size_hint: None,None
 				size:168,168
 				background_normal: 'helpbutton.png'
 				background_down: 'helpbutton.png'
->>>>>>> 648cbf1a63c646660808608291dbc871bfe047a4
 				on_press: app.submit_clicked("HelpB")
 
-				
 		BoxLayout:
 			orientation: 'horizontal'
 			AnchorLayout:
@@ -54,7 +45,7 @@
 					text:'Map'
 					background_normal: 'ff242f.png'
 					background_down: 'ab1e25.png'
-					on_press: app.submit_clicked("MapB")
+					on_press: app.submit_clicked("InstructionsB")
 
 
 
@@ -165,7 +156,6 @@
 					text:'Map'
 					background_normal: 'ff242f.png'
 					background_down: 'ab1e25.png'
-					on_press: app.submit_clicked("MapB")
 
 
 <-Background>:
@@ -211,26 +201,3 @@
             texture: self.texture
             size: self.width - 600, self.height - 505
             pos: self.x -19, self.y + 245
-<MapScreen>:
-	MapI:
-		source: "mapwithout.png"
-	BoxLayout:
-		orientation: 'horizontal'
-		Button:
-			id: "HomeB"
-			text: "Home"
-			size: 80,60
-			size_hint:0.2,None
-			background_normal: 'ff242f.png'
-			background_down: "eb1e25.png"
-			on_press: app.submit_clicked("HomeB")
-
-
-<-MapI>:
-	canvas:
-        Color:
-            rgb: (1, 1, 1)
-        Rectangle:
-            texture: self.texture
-            size: self.width + 54, self.height + 630
-            pos: self.x - 10, self.y - 285
