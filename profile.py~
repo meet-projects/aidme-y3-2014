@@ -13,15 +13,13 @@ sm=ScreenManager()
 
 class Background(Image):
 	pass
-class HomeScreen(Screen):
+class ProfileScreen(Screen):
 	pass
-class homeApp(App):
+class ProfileApp(App):
 	def build(self):
-	        self.home=HomePage(name='h1')
-	        sm.add_widget(self.home)
+	        self.profile=ProfileScreen(name='h1')
+	        sm.add_widget(self.profile)
 	        return sm
-        
-
 
 if __name__=="__main__":
-    homeApp().run()
+    ProfileApp().run()

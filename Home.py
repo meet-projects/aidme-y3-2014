@@ -13,11 +13,11 @@ sm=ScreenManager()
 
 class Background(Image):
 	pass
-class HomePage(Screen):
+class HomeScreen(Screen):
 	pass
 class homeApp(App):
 	def build(self):
-	        self.home=HomePage(name='h1')
+	        self.home=HomeScreen(name='h1')
 	        sm.add_widget(self.home)
 	        return sm
         

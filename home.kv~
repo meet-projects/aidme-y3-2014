@@ -1,41 +1,42 @@
 #:kivy 1.8.0
-
-<HomePage>:
+<HomeScreen>:
 	Background:
-		source: 'e9e9e9.png'
+		source: 'd7d7d7.png'
 	BoxLayout:
 		orientation: 'vertical'
 		AnchorLayout:
 			anchor_x:'center'
 			anchor_y:'center'
-			Label:
-				text:'AidMe'
-		AnchorLayout:
-			anchor_x:'center'
-			anchor_y:'center'
-			
 			Button:
-				size_hint:0.2,None
-				size:80,60
-				text:'Help'
-#				background_normal: 'ff242f.png'
-#				background_down: 'ab1e25.png'
+				id: 'HelpB'
+				size_hint: None,None
+				size:168,168
+				background_normal: 'helpbutton.png'
+				background_down: 'helpbutton.png'
 				
 		BoxLayout:
 			orientation: 'horizontal'
-			Button:
-				size:80,60
-				size_hint:0.2,None
-				text:'profile'
-				background_normal: 'ff242f.png'
-				background_down: 'ab1e25.png'
-				border: (30,30,30,30)
-			Button:
-				size:80,60
-				size_hint:0.2,None
-				text:'instructions'
-				background_normal: 'ff242f.png'
-				background_down: 'ab1e25.png'
+			AnchorLayout:
+				anchor_y:'bottom'
+				anchor_x:'left'
+				Button:
+					id: 'ProfileB'
+					size:80,60
+					size_hint:0.999,None
+					text:'Profile'
+					background_normal: 'ff242f.png'
+					background_down: 'ab1e25.png'
+					border: (30,30,30,30)
+			AnchorLayout:
+				anchor_y:'bottom'
+				anchor_x:'right'
+				Button:
+					id: 'MapB'
+					size:80,60
+					size_hint:0.999,None
+					text:'Map'
+					background_normal: 'ff242f.png'
+					background_down: 'ab1e25.png'
 <-Background>:
 	canvas:
         Color:
