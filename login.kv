@@ -1,15 +1,35 @@
 #:kivy 1.8.0
 <LogIn>:
 	Backgruond:
-		source: "ffcf6e.png"
-	Label:
-		id: Email
-		text: "Email:"
-		pos:-300,50
-	SignUpB:
-		source: "SignUpB.png"
+		source: "d7d7d7.png"
 	Logo:
-		source: "Logo.png"
+		source: "Logo.png"	
+	AnchorLayout:
+		orientation: "vertical"
+		TextInput:
+			id: Email
+			size_hint: 0.5,0.05
+			pos: 50,50
+			background: 255,255,255,1
+	
+		BoxLayout:
+			orientation: 'horizontal'
+			Button:
+				text: "Login"
+				size: 80,60
+				size_hint:0.4,0
+				background_normal: 'ff242f.png'
+				background_down: "eb1e25.png"
+			Button:
+				text: "Sign Up"
+				size: 80,60
+				size_hint:0.4,0
+				background_normal: 'ff242f.png'
+				background_down: "eb1e25.png"
+			
+		
+
+	
 
 
 <-Backgruond>:
@@ -26,8 +46,8 @@
             rgb: (1, 1, 1)
         Rectangle:
             texture: self.texture
-            size: self.width + 500, self.height + 100
-            pos: self.x - 320, self.y - 310
+            size: self.width -600, self.height -500
+            pos: self.x + 150, self.y + 20
 
 <-Logo>:
 	canvas:
@@ -35,5 +55,5 @@
             rgb: (1, 1, 1)
         Rectangle:
             texture: self.texture
-            size: self.width + 20, self.height + 20
-            pos: self.x + 50, self.y - 10
+            size: self.width - 600, self.height - 500
+            pos: self.x + 290, self.y + 400
