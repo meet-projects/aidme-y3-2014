@@ -8,7 +8,7 @@ from kivy.graphics import *
 
 sm=ScreenManager()
 
-class Background(Image):
+class Backgruond(Image):
     pass
 
 class SignUpB(Image):
@@ -18,9 +18,6 @@ class Logo(Image):
     pass
 
 class Password(Image):
-	pass
-
-class Email(Image):
 	pass
 
 class LogIn(Screen):
