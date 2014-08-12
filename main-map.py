@@ -8,11 +8,18 @@ from kivy.graphics import *
 
 sm=ScreenManager()
 
+class Map(Screen):
+	pass
 
+	
+class MapI(Image):
+	pass
+class Background(Image):
+	pass
 
 class MapApp(App):
     def build(self):
-        self.Map=LogIn(name="Map")
+        self.Map=Map(name="Map")
         sm.add_widget(self.Map)
         return sm
         
@@ -20,4 +27,4 @@ class MapApp(App):
 
         
 if __name__=="__main__":
-    LogInApp().run()
+    MapApp().run()
