@@ -20,9 +20,6 @@ class Logo(Image):
 class Password(Image):
 	pass
 
-class Email(Image):
-	pass
-
 class LogIn(Screen):
     pass
 
