@@ -1,7 +1,13 @@
 #:kivy 1.8.0
 
+<<<<<<< HEAD
+<HomePage>:
+	Background:
+		source: 'e9e9e9.png'
+=======
 <HomeScreen>:
 
+>>>>>>> 1b13cf52addca4f9671ea1d0e41fcc267b2b1bc1
 	BoxLayout:
 		orientation: 'vertical'
 		AnchorLayout:
@@ -17,7 +23,9 @@
 				size_hint:0.2,None
 				size:80,60
 				text:'Help'
-			
+				background_normal: 'ff242f.png'
+				background_down: 'ab1e25.png'
+				
 		BoxLayout:
 			orientation: 'horizontal'
 			Button:
@@ -26,8 +34,24 @@
 				size_hint:0.2,None
 				text:'Profile'
 				background_normal: 'ff242f.png'
+				background_down: 'ab1e25.png'
+				border: (30,30,30,30)
 			Button:
 				id: 'InstructionsB'
 				size:80,60
 				size_hint:0.2,None
+<<<<<<< HEAD
+				text:'instructions'
+				background_normal: 'ff242f.png'
+				background_down: 'ab1e25.png'
+<-Background>:
+	canvas:
+        Color:
+            rgb: (1, 1, 1)
+        Rectangle:
+            texture: self.texture
+            size: self.width + 20, self.height + 20
+            pos: self.x + 0, self.y - 10
+=======
 				text:'Instructions'
+>>>>>>> 1b13cf52addca4f9671ea1d0e41fcc267b2b1bc1
