@@ -1,6 +1,6 @@
 #:kivy 1.8.0
 
-<HomeScreen>:
+<Home>:
 
 	BoxLayout:
 		orientation: 'vertical'
@@ -13,7 +13,6 @@
 			anchor_x:'center'
 			anchor_y:'center'
 			Button:
-				id: 'HelpB'
 				size_hint:0.2,None
 				size:80,60
 				text:'Help'
@@ -21,13 +20,11 @@
 		BoxLayout:
 			orientation: 'horizontal'
 			Button:
-				id: 'ProfileB'
 				size:80,60
 				size_hint:0.2,None
-				text:'Profile'
-				background_normal: 'ff242f.png'
+				text:'profile'
+				background_normal: 'bat.jpg'
 			Button:
-				id: 'InstructionsB'
 				size:80,60
 				size_hint:0.2,None
-				text:'Instructions'
+				text:'instructions'

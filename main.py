@@ -1,4 +1,5 @@
 import kivy
+import smtplib
 
 kivy.require('1.8.0')
 
@@ -10,8 +11,40 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.anchorlayout import AnchorLayout
 from kivy.config import Config
+from email.mime.text import MIMEText
+from kivy.uix.image import Image
 
 sm = ScreenManager()
+
+def send_email():
+
+	# E-Mail code
+	# Open a plain text file for reading.  For this example, assume that
+	# the text file contains only ASCII characters.
+	fp = open(textfile, 'rb')
+	# Create a text/plain message
+	msg = MIMEText(fp.read())
+	fp.close()
+
+	# me == the sender's email address
+	# you == the recipient's email address
+	msg['Subject'] = 'The contents of %s' % textfile
+	msg['From'] = me
+	msg['To'] = you
+
+	# Send the message via our own SMTP server, but don't include the
+	# envelope header.
+	s = smtplib.SMTP('localhost')
+	s.sendmail(me, [you], msg.as_string())
+	s.quit()
+
+class GeneralScreen (Screen):
+
+	pass
+
+class Background(Image):
+	
+	pass
 
 class HomeScreen(Screen):
 
@@ -22,11 +55,9 @@ class LogInScreen(Screen):
 	def get_info():
 
 		email = self.ids.EmailTI.text
-
 		password = self.ids.PasswordTI.text
-
 		return [email,password]
-		
+
 class SignUpScreen(Screen):
 
 	pass
@@ -42,6 +73,7 @@ class AidMeApp(App):
 		Config.set('kivy','keyboard_mode','systemanddock')
 		Config.write()
 
+		self.general_screen = GeneralScreen(name="General")
 		self.home_screen = HomeScreen(name="Home")
 		self.login_screen = LogInScreen(name="LogIn")
 		self.singup_screen = SignUpScreen(name="SignUp")
@@ -50,35 +82,32 @@ class AidMeApp(App):
 		sm.add_widget(self.login_screen)
 		sm.add_widget(self.singup_screen)
 		sm.add_widget(self.profile_screen)
-
+		sm.add_widget(self.general_screen)
+		sm.current = "Home"
+		
 		return sm
 
-	def submit_clicked(self, id):
+	def submit_clicked(self, id2):
 
-		if id == "HelpB" :
-
-			# E-Mail code
+		if id2 == "HelpB" :
 
 			pass
 
-		elif id == "ProfileB":
+		elif id2 == "ProfileB":
 
-			sm.current = "Profile"
-			self.home_screen.change
+			sm.current = "General"
 
-		elif id == "InstructionsB":
+		elif id2 == "InstructionsB":
 
-			pass
+			sm.current = "General"
 
-		elif id == "LogInB":
+		elif id2 == "LogInB":
 
 			sm.current = "LogIn"
-			self.login_screen.change
 
-		elif id == "SignUpB":
+		elif id2 == "SignUpB":
 
 			sm.current = "SignUp"
-			self.login_screen.change
 
 
 
