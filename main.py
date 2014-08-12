@@ -118,13 +118,5 @@ class AidMeApp(App):
 
 			sm.current = "SignUp"
 
-
-
-
-
-
-
-
-
 if __name__=="__main__":
 	AidMeApp().run()
