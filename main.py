@@ -17,7 +17,7 @@ from kivy.uix.image import Image
 sm = ScreenManager(transition=NoTransition())
 
 # def send_email():
-	
+
 # 	fp = open(textfile, 'rb')
 # 	# Create a text/plain message
 # 	msg = MIMEText(fp.read())
@@ -34,6 +34,18 @@ sm = ScreenManager(transition=NoTransition())
 # 	s = smtplib.SMTP('localhost')
 # 	s.sendmail(me, [you], msg.as_string())
 # 	s.quit()
+
+class SignUpB(Image):
+    
+    pass
+
+class Logo(Image):
+    
+    pass
+
+class LogIn(Screen):
+
+    pass
 
 class GeneralScreen (Screen):
 
@@ -80,7 +92,7 @@ class AidMeApp(App):
 		sm.add_widget(self.singup_screen)
 		sm.add_widget(self.profile_screen)
 		sm.add_widget(self.general_screen)
-		sm.current = "Home"
+		sm.current = "LogIn"
 		
 		return sm
 
@@ -100,7 +112,7 @@ class AidMeApp(App):
 
 		elif id2 == "LogInB":
 
-			sm.current = "LogIn"
+			sm.current = "Home"
 
 		elif id2 == "SignUpB":
 

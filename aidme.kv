@@ -35,3 +35,64 @@
 				size_hint:0.2,None
 				text:'Instructions'
 				on_press: app.submit_clicked("InstructionsB")
+
+<LogInScreen>:
+	Background:
+		source: "d7d7d7.png"
+	Logo:
+		source: "Logo.png"	
+	AnchorLayout:
+		orientation: "vertical"
+		TextInput:
+			id: Email
+			size_hint: 0.5,0.05
+			pos: 50,50
+			background: 255,255,255,1
+	
+		BoxLayout:
+			orientation: 'horizontal'
+			Button:
+				text: "Login"
+				size: 80,60
+				size_hint:0.4,0
+				background_normal: 'ff242f.png'
+				background_down: "eb1e25.png"
+				on_press: app.submit_clicked("LogInB")
+			Button:
+				text: "Sign Up"
+				size: 80,60
+				size_hint:0.4,0
+				background_normal: 'ff242f.png'
+				background_down: "eb1e25.png"
+				on_press: app.submit_clicked("LogInB")
+			
+		
+
+	
+
+
+<-Background>:
+	canvas:
+        Color:
+            rgb: (1, 1, 1)
+        Rectangle:
+            texture: self.texture
+            size: self.width + 20, self.height + 20
+            pos: self.x - 10, self.y - 10
+<-SignUpB>:
+	canvas:
+        Color:
+            rgb: (1, 1, 1)
+        Rectangle:
+            texture: self.texture
+            size: self.width -600, self.height -500
+            pos: self.x + 150, self.y + 20
+
+<-Logo>:
+	canvas:
+        Color:
+            rgb: (1, 1, 1)
+        Rectangle:
+            texture: self.texture
+            size: self.width - 600, self.height - 500
+            pos: self.x + 290, self.y + 400

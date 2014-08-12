@@ -8,7 +8,7 @@ from kivy.graphics import *
 
 sm=ScreenManager()
 
-class Backgruond(Image):
+class Background(Image):
     pass
 
 class SignUpB(Image):
