@@ -75,6 +75,13 @@ class SignUpScreen(Screen):
 
 	pass
 
+class MapScreen(Screen):
+	pass
+
+	
+class MapI(Image):
+	pass
+
 class ProfileScreen(Screen):
 
 	pass
@@ -91,6 +98,8 @@ class AidMeApp(App):
 		self.login_screen = LogInScreen(name="LogIn")
 		self.singup_screen = SignUpScreen(name="SignUp")
 		self.profile_screen = ProfileScreen(name="Profile")
+		self.map_screen=MapScreen(name="Map")
+		sm.add_widget(self.map_screen)
 		sm.add_widget(self.home_screen)
 		sm.add_widget(self.login_screen)
 		sm.add_widget(self.singup_screen)
@@ -129,6 +138,8 @@ class AidMeApp(App):
 		elif id2 == "LogOutB":
 
 			sm.current = "LogIn"
+		elif id2 == "MapB":
+			sm.current = "Map"
 
 if __name__=="__main__":
 	AidMeApp().run()
