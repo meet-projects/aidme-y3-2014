@@ -1,20 +1,36 @@
 #:kivy 1.8.0
-<HomeScreen>:
+<ProfileScreen>:
 	Background:
 		source: 'd7d7d7.png'
 	BoxLayout:
 		orientation: 'vertical'
+		BoxLayout:
+			orientation: 'horizontal'
+			AnchorLayout:
+				anchor_x:'left'
+				anchor_y:'top'
+				Button:
+					id: 'EditB'
+					size_hint:0.2,None
+					size:80,60
+					text:'Edit'
+					background_normal: 'ff242f.png'
+					background_down: 'ab1e25.png'
+			AnchorLayout:
+				anchor_x:'right'
+				anchor_y:'top'
+				Button:
+					id: 'LogOutB'
+					size_hint:0.2,None
+					size:80,60
+					text:'Log Out'
+					background_normal: 'ff242f.png'
+					background_down: 'ab1e25.png'
 		AnchorLayout:
 			anchor_x:'center'
-			anchor_y:'center'
-			Button:
-				id: 'HelpB'
-				size_hint: None,None
-				size:168,168
-#				pos: root.width/2,root.heith/2
-				background_normal: 'helpbutton.png'
-				background_down: 'helpbutton.png'
-				
+			anchor_y:'top'
+			Label:
+				text:'profile'
 		BoxLayout:
 			orientation: 'horizontal'
 			AnchorLayout:
@@ -27,7 +43,6 @@
 					text:'Profile'
 					background_normal: 'ff242f.png'
 					background_down: 'ab1e25.png'
-					border: (30,30,30,30)
 			AnchorLayout:
 				anchor_y:'bottom'
 				anchor_x:'right'
@@ -38,6 +53,7 @@
 					text:'Map'
 					background_normal: 'ff242f.png'
 					background_down: 'ab1e25.png'
+
 <-Background>:
 	canvas:
         Color:

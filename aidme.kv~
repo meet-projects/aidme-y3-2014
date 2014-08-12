@@ -16,18 +16,10 @@
 			anchor_y:'center'
 			Button:
 				id: 'HelpB'
-<<<<<<< HEAD
-				size_hint:None,None
-				size:265,258
-				text:''
-				background_normal: 'Red Panick Button Unpressed.png'
-				background_down: ''
-=======
 				size_hint: None,None
 				size:168,168
 				background_normal: 'helpbutton.png'
 				background_down: 'helpbutton.png'
->>>>>>> 648cbf1a63c646660808608291dbc871bfe047a4
 				on_press: app.submit_clicked("HelpB")
 
 				
@@ -121,7 +113,7 @@
 				anchor_y:'top'
 				Button:
 					id: 'EditB'
-					size_hint:0.4,None
+					size_hint:0.3,None
 					size:80,60
 					text:'Edit'
 					background_normal: 'ff242f.png'
@@ -131,7 +123,7 @@
 				anchor_y:'top'
 				Button:
 					id: 'LogOutB'
-					size_hint:0.4,None
+					size_hint:0.3,None
 					size:80,60
 					text:'Log Out'
 					background_normal: 'ff242f.png'
