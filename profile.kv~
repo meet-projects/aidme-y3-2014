@@ -1,7 +1,7 @@
 #:kivy 1.8.0
 <ProfileScreen>:
 	Background:
-		source: 'd7d7d7.png'
+		source: 'ffffff.png'
 	BoxLayout:
 		orientation: 'vertical'
 		BoxLayout:
@@ -10,8 +10,14 @@
 				anchor_x:'left'
 				anchor_y:'top'
 				Button:
+					text: 'Sagi Zur'
+					size: 80,60
+					size_hint: 2,0.7
+					background_normal:'737373.png'
+					background_down:'737373.png'
+				Button:
 					id: 'EditB'
-					size_hint:0.2,None
+					size_hint:0.4,0.7
 					size:80,60
 					text:'Edit'
 					background_normal: 'ff242f.png'
@@ -21,16 +27,47 @@
 				anchor_y:'top'
 				Button:
 					id: 'LogOutB'
-					size_hint:0.2,None
+					size_hint:0.4,0.7
 					size:80,60
 					text:'Log Out'
 					background_normal: 'ff242f.png'
 					background_down: 'ab1e25.png'
-		AnchorLayout:
-			anchor_x:'center'
-			anchor_y:'top'
+					on_press: app.submit_clicked("LogOutB")
+		Label:
+			text:'Profile'
+			color:(0,0,0,1)
+		BoxLayout:
+			orientation: 'horizontal'
 			Label:
-				text:'profile'
+				text: 'Name: '
+				color: (1,0,0,1)
+			Label:
+				text: 'Sagi Zur'
+				color: (0,0,0,1)
+		BoxLayout:
+			orientation: 'horizontal'
+			Label:
+				text: 'Age: '
+				color: (1,0,0,1)
+			Label:
+				text: '18'
+				color: (0,0,0,1)
+		BoxLayout:
+			orientation: 'horizontal'
+			Label:
+				text: 'Diseases: '
+				color: (1,0,0,1)
+			Label:
+				text: 'None'
+				color: (0,0,0,1)
+		BoxLayout:
+			orientation: 'horizontal'
+			Label:
+				text: 'Skills: '
+				color: (1,0,0,1)
+			Label:
+				text: '10 Hours First Aid Course'
+				color: (0,0,0,1)
 		BoxLayout:
 			orientation: 'horizontal'
 			AnchorLayout:
@@ -39,22 +76,22 @@
 				Button:
 					id: 'HomeB'
 					size:80,60
-					size_hint:0.999,None
+					size_hint:0.99,0.7
 					text:'Home'
 					background_normal: 'ff242f.png'
 					background_down: 'ab1e25.png'
-					border: (30,30,30,30)
+					on_press: app.submit_clicked("HomeB")
 			AnchorLayout:
 				anchor_y:'bottom'
 				anchor_x:'right'
 				Button:
 					id: 'MapB'
 					size:80,60
-					size_hint:0.999,None
+					size_hint:0.99,0.7
 					text:'Map'
 					background_normal: 'ff242f.png'
 					background_down: 'ab1e25.png'
-
+					on_press: app.submit_clicked("MapB")
 <-Background>:
 	canvas:
         Color:
