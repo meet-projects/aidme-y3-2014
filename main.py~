@@ -58,9 +58,18 @@ class SignUpScreen(Screen):
 
 class MapScreen(Screen):
 	pass
+<<<<<<< HEAD
+
 	
 class MapI(Image):
 	pass
+
+class ProfileScreen(Screen):
+=======
+	
+class MapI(Image):
+	pass
+>>>>>>> fd37981ccfc5141568657542251ca770da93da01
 
 class ProfileScreen(Screen):
 	pass
