@@ -16,25 +16,6 @@ from kivy.uix.image import Image
 
 sm = ScreenManager(transition=NoTransition())
 
-# def send_email():
-
-# 	fp = open(textfile, 'rb')
-# 	# Create a text/plain message
-# 	msg = MIMEText(fp.read())
-# 	fp.close()
-
-# 	# me == the sender's email address
-# 	# you == the recipient's email address
-# 	msg['Subject'] = 'The contents of %s' % textfile
-# 	msg['From'] = me
-# 	msg['To'] = you
-
-# 	# Send the message via our own SMTP server, but don't include the
-# 	# envelope header.
-# 	s = smtplib.SMTP('localhost')
-# 	s.sendmail(me, [you], msg.as_string())
-# 	s.quit()
-
 class SignUpB(Image):
     
     pass

@@ -78,6 +78,7 @@
 			size: 600, 70
 			size_hint: None, None
 			pos: 1000,50
+			password: True
 	BoxLayout:
 		orientation: 'horizontal'
 		AnchorLayout:
@@ -228,8 +229,8 @@
             rgb: (1, 1, 1)
         Rectangle:
             texture: self.texture
-            size: self.width + 300, self.height + 300
-            pos: self.x - 500, self.y + 0
+            size: self.width + 2000, self.height + 1000
+            pos: self.x - 1430, self.y - 120
 
 <-Email>:
 	canvas:
@@ -237,8 +238,8 @@
             rgb: (1, 1, 1)
         Rectangle:
             texture: self.texture
-            size: self.width - 600, self.height - 100
-            pos: self.x -19, self.y + 245
+            size: self.width - 600, self.height - 1400
+            pos: self.x -19, self.y + 590
 
 <MapScreen>:
 	Background:
