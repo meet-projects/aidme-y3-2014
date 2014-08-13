@@ -6,7 +6,7 @@ kivy.require('1.8.0')
 from kivy.uix.label import Label
 from kivy.app import App
 from kivy.uix.button import Button
-from kivy.uix.screenmanager import ScreenManager, Screen, NoTransition
+from kivy.uix.screenmanager import ScreenManager, Screen, NoTransition, SlideTransition
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.anchorlayout import AnchorLayout
@@ -14,7 +14,14 @@ from kivy.config import Config
 from email.mime.text import MIMEText
 from kivy.uix.image import Image
 from kivy.uix.popup import Popup
+
 sm = ScreenManager(transition=NoTransition())
+
+
+class Slide(SlideTransition):
+
+	pass
+
 
 class SignUpB(Image):
     
@@ -92,9 +99,14 @@ class AidMeApp(App):
 		return sm
 
 	def submit_clicked(self, id2):
+		
 		if id2 == "ProfileB":
 
+			sm.transition = SlideTransition(direction="right")
+
 			sm.current = "Profile"
+
+			sm.transtion = NoTransition()
 
 		elif id2 == "InstructionsB":
 
@@ -110,9 +122,23 @@ class AidMeApp(App):
 
 		elif id2 == "HomeB":
 
+			sm.transition = SlideTransition(direction="right")
+
 			sm.current = "Home"
 
+			sm.transtion = NoTransition()
+
+		elif id2 == "HomeB1":
+
+			sm.transition = SlideTransition(direction="left")
+
+			sm.current = "Home"
+
+			sm.transtion = NoTransition()
+
 		elif id2 == "LogOutB":
+
+			sm.transition = NoTransition()
 
 			sm.remove_widget(self.login_screen)
 			self.login_screen = LogInScreen(name="LogIn")
@@ -120,8 +146,13 @@ class AidMeApp(App):
 			sm.current = "LogIn"
 		
 		elif id2 == "MapB":
-		
+
+			sm.transition = SlideTransition(direction="left")
+			
 			sm.current = "Map"
+
+			sm.transtion = NoTransition()
+
 		elif id2 == "HelpB":
 			b = Button(text='Dismiss',size= (300,200), size_hint=(1,None))
 			content = BoxLayout(orientation='vertical')
