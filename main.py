@@ -85,7 +85,7 @@ class AidMeApp(App):
 		sm.add_widget(self.singup_screen)
 		sm.add_widget(self.profile_screen)
 		sm.add_widget(self.general_screen)
-		sm.current = "LogIn"
+		sm.current = "Home"
 		
 		return sm
 
@@ -117,6 +117,9 @@ class AidMeApp(App):
 
 		elif id2 == "LogOutB":
 
+			sm.remove_widget(self.login_screen)
+			self.login_screen = LogInScreen(name="LogIn")
+			sm.add_widget(self.login_screen)
 			sm.current = "LogIn"
 		
 		elif id2 == "MapB":
