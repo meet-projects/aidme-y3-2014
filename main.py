@@ -14,6 +14,8 @@ from kivy.config import Config
 from email.mime.text import MIMEText
 from kivy.uix.image import Image
 from kivy.uix.popup import Popup
+from kivy.graphics import *
+
 sm = ScreenManager(transition=NoTransition())
 
 class SignUpB(Image):
@@ -123,11 +125,17 @@ class AidMeApp(App):
 		
 			sm.current = "Map"
 		elif id2 == "HelpB":
-			b = Button(text='Dismiss',size= (300,200), size_hint=(1,None))
-			content = BoxLayout(orientation='vertical')
-			content.add_widget(Label(text='Help is on the way!'))
+			b = Button(text='Dismiss',size= (100,100), size_hint=(1,None), background_normal= 'ff242f.png', background_down='ff242f.png')
+#			back.add_widget(Color(rgba=[1,1,1,1]))
+#			back.add_widget(Rectangle(pos = self.pos, size=self.size))
+			content = BoxLayout(orientation='vertical', size_hint=(1,1), size=(1,300))
+			popup = Popup( title="",content=content,size_hint=(0.5, 0.5),id="Popup")
+			with content.canvas:
+				Color(1.,1.,1.)
+				Rectangle(pos =(root.width/2-self.width, root.height/2-self.height), size_hint=(1,None), size=(100, 300))
+				#root should be window
+			content.add_widget(Label(text='Help is on the way!',color=(1,0,0,1),font_size='20sp',bold=True))
 			content.add_widget(b)
-			popup = Popup(title='Alert', content=content,size_hint=(None, None), size=(1000, 1000),id="Popup")
 			b.bind(on_press=popup.dismiss)
 
 			popup.open()
