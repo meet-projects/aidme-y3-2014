@@ -17,7 +17,7 @@
 			Button:
 				id: 'HelpB'
 				size_hint: None,None
-				size:168,168
+				size:636,636
 				background_normal: 'helpbutton.png'
 				background_down: 'helpbuttonpressed.png'
 				on_press: app.submit_clicked("HelpB")
