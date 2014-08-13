@@ -13,6 +13,7 @@ from kivy.uix.anchorlayout import AnchorLayout
 from kivy.config import Config
 from email.mime.text import MIMEText
 from kivy.uix.image import Image
+from kivy.uix.popup import Popup
 sm = ScreenManager(transition=NoTransition())
 
 class SignUpB(Image):
@@ -64,6 +65,7 @@ class MapI(Image):
 class ProfileScreen(Screen):
 	pass
 
+
 class AidMeApp(App):
 	
 	def build(self):
@@ -87,12 +89,7 @@ class AidMeApp(App):
 		return sm
 
 	def submit_clicked(self, id2):
-
-		if id2 == "HelpB" :
-
-			pass
-
-		elif id2 == "ProfileB":
+		if id2 == "ProfileB":
 
 			sm.current = "Profile"
 
@@ -119,6 +116,15 @@ class AidMeApp(App):
 		elif id2 == "MapB":
 		
 			sm.current = "Map"
+		elif id2 == "HelpB":
+			b = Button(text='Dismiss')
+			content = BoxLayout(orientation='vertical')
+			content.add_widget(Label(text='Help is on the way!'))
+			content.add_widget(b)
+			popup = Popup(title='Test popup', content=content,size_hint=(None, None), size=(400, 400),id="Popup")
+			b.bind(on_press=popup.dismiss)
+
+			popup.open()
 
 if __name__=="__main__":
 	AidMeApp().run()
