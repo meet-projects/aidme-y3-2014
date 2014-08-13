@@ -57,10 +57,11 @@ class SignUpScreen(Screen):
 	pass
 
 class MapScreen(Screen):
+	
 	pass
 
-	
 class MapI(Image):
+
 	pass
 
 class ProfileScreen(Screen):
@@ -71,7 +72,7 @@ class AidMeApp(App):
 
 	def build(self):
 
-		Config.set('kivy','keyboard_mode','systemanddock')
+		Config.set('kivy','keyboard_mode','')
 		Config.write()
 
 		self.general_screen = GeneralScreen(name="General")
