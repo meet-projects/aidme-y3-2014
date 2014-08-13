@@ -30,7 +30,7 @@
 				Button:
 					id: 'ProfileB'
 					size:80,60
-					size_hint:0.95,None
+					size_hint:0.99,0.3
 					text:'Profile'
 					background_normal: 'ff242f.png'
 					background_down: 'ab1e25.png'
@@ -41,7 +41,7 @@
 				Button:
 					id: 'MapB'
 					size:80,60
-					size_hint:0.95,None
+					size_hint:0.99,0.3
 					text:'Map'
 					background_normal: 'ff242f.png'
 					background_down: 'ab1e25.png'
@@ -60,22 +60,25 @@
 		source: "email.png"	
 	AnchorLayout:
 		size_hint: 1,0.52
-		anchor_x: "center"
+		anchor_x: "right"
 		anchor_y: "top"
+		padding: 100
 		TextInput:
 			id: Email
-			size: 500, 30
+			size: 600, 70
 			size_hint: None, None
 			pos: 50,50
 	AnchorLayout:
 		size_hint: 1,0.35
-		anchor_x: "center"
+		anchor_x: "right"
 		anchor_y: "top"
+		padding: 100
 		TextInput:
 			id: Password
-			size: 500, 30
+			size: 600, 70
 			size_hint: None, None
-			pos: 50,50
+			pos: 1000,50
+			password: True
 	BoxLayout:
 		orientation: 'horizontal'
 		AnchorLayout:
@@ -84,7 +87,7 @@
 			Button:
 				text: "Login"
 				size: 80,60
-				size_hint:0.95,None
+				size_hint:0.99,0.1
 				background_normal: 'ff242f.png'
 				background_down: "eb1e25.png"
 				on_press: app.submit_clicked("LogInB")
@@ -94,7 +97,7 @@
 			Button:
 				text: "Sign Up"
 				size: 80,60
-				size_hint:0.95,None
+				size_hint:0.99,0.1
 				background_normal: 'ff242f.png'
 				background_down: "eb1e25.png"
 				on_press: app.submit_clicked("SignUpB")
@@ -111,14 +114,14 @@
 				anchor_x:'left'
 				anchor_y:'top'
 				Button:
-					text: 'Sagi'
+					text: 'Sagi Zur'
 					size: 80,60
-					size_hint: 2,None
+					size_hint: 2,0.7
 					background_normal:'737373.png'
 					background_down:'737373.png'
 				Button:
 					id: 'EditB'
-					size_hint:0.4,None
+					size_hint:0.4,0.7
 					size:80,60
 					text:'Edit'
 					background_normal: 'ff242f.png'
@@ -128,14 +131,47 @@
 				anchor_y:'top'
 				Button:
 					id: 'LogOutB'
-					size_hint:0.4,None
+					size_hint:0.4,0.7
 					size:80,60
 					text:'Log Out'
 					background_normal: 'ff242f.png'
 					background_down: 'ab1e25.png'
 					on_press: app.submit_clicked("LogOutB")
-		AnchorLayout:
-			
+		Label:
+			text:'Profile'
+			color:(0,0,0,1)
+		BoxLayout:
+			orientation: 'horizontal'
+			Label:
+				text: 'Name: '
+				color: (1,0,0,1)
+			Label:
+				text: 'Sagi Zur'
+				color: (0,0,0,1)
+		BoxLayout:
+			orientation: 'horizontal'
+			Label:
+				text: 'Age: '
+				color: (1,0,0,1)
+			Label:
+				text: '18'
+				color: (0,0,0,1)
+		BoxLayout:
+			orientation: 'horizontal'
+			Label:
+				text: 'Diseases: '
+				color: (1,0,0,1)
+			Label:
+				text: 'None'
+				color: (0,0,0,1)
+		BoxLayout:
+			orientation: 'horizontal'
+			Label:
+				text: 'Skills: '
+				color: (1,0,0,1)
+			Label:
+				text: '10 Hours First Aid Course'
+				color: (0,0,0,1)
 		BoxLayout:
 			orientation: 'horizontal'
 			AnchorLayout:
@@ -144,7 +180,7 @@
 				Button:
 					id: 'HomeB'
 					size:80,60
-					size_hint:0.95,None
+					size_hint:0.99,0.7
 					text:'Home'
 					background_normal: 'ff242f.png'
 					background_down: 'ab1e25.png'
@@ -155,12 +191,11 @@
 				Button:
 					id: 'MapB'
 					size:80,60
-					size_hint:0.95,None
+					size_hint:0.99,0.7
 					text:'Map'
 					background_normal: 'ff242f.png'
 					background_down: 'ab1e25.png'
 					on_press: app.submit_clicked("MapB")
-
 
 <-Background>:
 	canvas:
@@ -185,8 +220,8 @@
             rgb: (1, 1, 1)
         Rectangle:
             texture: self.texture
-            size: self.width - 600, self.height - 500
-            pos: self.x + 290, self.y + 450
+            size: self.width - 600, self.height - 1500
+            pos: self.x + 290, self.y + 1200
 
 <-Password>:
 	canvas:
@@ -194,8 +229,8 @@
             rgb: (1, 1, 1)
         Rectangle:
             texture: self.texture
-            size: self.width + 300, self.height + 300
-            pos: self.x - 500, self.y + 0
+            size: self.width + 2000, self.height + 1000
+            pos: self.x - 1430, self.y - 120
 
 <-Email>:
 	canvas:
@@ -203,10 +238,12 @@
             rgb: (1, 1, 1)
         Rectangle:
             texture: self.texture
-            size: self.width - 600, self.height - 505
-            pos: self.x -19, self.y + 245
+            size: self.width - 600, self.height - 1400
+            pos: self.x -19, self.y + 590
 
 <MapScreen>:
+	Background:
+		source:"ffffff.png"
 	MapI:
 		source: "mapwithout.png"
 	BoxLayout:
@@ -215,7 +252,7 @@
 			id: "HomeB"
 			text: "Home"
 			size: 80,60
-			size_hint:0.2,None
+			size_hint:0.2,0.1
 			background_normal: 'ff242f.png'
 			background_down: "eb1e25.png"
 			on_press: app.submit_clicked("HomeB")
