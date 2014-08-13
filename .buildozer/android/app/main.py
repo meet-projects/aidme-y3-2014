@@ -57,9 +57,12 @@ class SignUpScreen(Screen):
 	pass
 
 class MapScreen(Screen):
-	pass
 	
+	pass
+
+
 class MapI(Image):
+
 	pass
 
 class ProfileScreen(Screen):
@@ -69,8 +72,8 @@ class ProfileScreen(Screen):
 class AidMeApp(App):
 	
 	def build(self):
-		Config.set('kivy','keyboard_mode','systemanddock')
-		Config.set('kivy', 'window_icon', self.icon)		
+
+		Config.set('kivy','keyboard_mode','')
 		Config.write()
 		self.general_screen = GeneralScreen(name="General")
 		self.home_screen = HomeScreen(name="Home")
@@ -84,7 +87,7 @@ class AidMeApp(App):
 		sm.add_widget(self.singup_screen)
 		sm.add_widget(self.profile_screen)
 		sm.add_widget(self.general_screen)
-		sm.current = "LogIn"
+		sm.current = "Home"
 		
 		return sm
 
@@ -111,17 +114,20 @@ class AidMeApp(App):
 
 		elif id2 == "LogOutB":
 
+			sm.remove_widget(self.login_screen)
+			self.login_screen = LogInScreen(name="LogIn")
+			sm.add_widget(self.login_screen)
 			sm.current = "LogIn"
 		
 		elif id2 == "MapB":
 		
 			sm.current = "Map"
 		elif id2 == "HelpB":
-			b = Button(text='Dismiss')
+			b = Button(text='Dismiss',size= (300,200), size_hint=(1,None))
 			content = BoxLayout(orientation='vertical')
 			content.add_widget(Label(text='Help is on the way!'))
 			content.add_widget(b)
-			popup = Popup(title='Test popup', content=content,size_hint=(None, None), size=(400, 400),id="Popup")
+			popup = Popup(title='Alert', content=content,size_hint=(None, None), size=(1000, 1000),id="Popup")
 			b.bind(on_press=popup.dismiss)
 
 			popup.open()

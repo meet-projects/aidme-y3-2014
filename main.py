@@ -123,11 +123,11 @@ class AidMeApp(App):
 		
 			sm.current = "Map"
 		elif id2 == "HelpB":
-			b = Button(text='Dismiss')
+			b = Button(text='Dismiss',size= (300,200), size_hint=(1,None))
 			content = BoxLayout(orientation='vertical')
 			content.add_widget(Label(text='Help is on the way!'))
 			content.add_widget(b)
-			popup = Popup(title='Test popup', content=content,size_hint=(None, None), size=(400, 400),id="Popup")
+			popup = Popup(title='Alert', content=content,size_hint=(None, None), size=(1000, 1000),id="Popup")
 			b.bind(on_press=popup.dismiss)
 
 			popup.open()
