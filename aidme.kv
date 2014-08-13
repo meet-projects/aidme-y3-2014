@@ -144,7 +144,7 @@
 				Button:
 					id: 'HomeB'
 					size:80,60
-					size_hint:0.95,None
+					size_hint:0.95,0.1
 					text:'Home'
 					background_normal: 'ff242f.png'
 					background_down: 'ab1e25.png'
@@ -155,7 +155,7 @@
 				Button:
 					id: 'MapB'
 					size:80,60
-					size_hint:0.95,None
+					size_hint:0.95,0.1
 					text:'Map'
 					background_normal: 'ff242f.png'
 					background_down: 'ab1e25.png'
@@ -207,6 +207,8 @@
             pos: self.x -19, self.y + 245
 
 <MapScreen>:
+	Background:
+		source:"ffffff.png"
 	MapI:
 		source: "mapwithout.png"
 	BoxLayout:
