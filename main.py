@@ -58,11 +58,8 @@ class SignUpScreen(Screen):
 class MapScreen(Screen):
 	
 	pass
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> 388bf8ae0cad8c7a2e6214035fa226b2191ef6ec
+
 class MapI(Image):
 
 	pass
@@ -73,13 +70,8 @@ class ProfileScreen(Screen):
 class AidMeApp(App):
 	
 	def build(self):
-<<<<<<< HEAD
 
 		Config.set('kivy','keyboard_mode','')
-=======
-		Config.set('kivy','keyboard_mode','systemanddock')
-		Config.set('kivy', 'window_icon', self.icon)		
->>>>>>> 388bf8ae0cad8c7a2e6214035fa226b2191ef6ec
 		Config.write()
 		self.general_screen = GeneralScreen(name="General")
 		self.home_screen = HomeScreen(name="Home")
