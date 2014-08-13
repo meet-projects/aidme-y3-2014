@@ -13,7 +13,6 @@ from kivy.uix.anchorlayout import AnchorLayout
 from kivy.config import Config
 from email.mime.text import MIMEText
 from kivy.uix.image import Image
-
 sm = ScreenManager(transition=NoTransition())
 
 class SignUpB(Image):
@@ -58,22 +57,19 @@ class SignUpScreen(Screen):
 
 class MapScreen(Screen):
 	pass
-
 	
 class MapI(Image):
 	pass
 
 class ProfileScreen(Screen):
-
 	pass
 
 class AidMeApp(App):
-
+	
 	def build(self):
-
 		Config.set('kivy','keyboard_mode','systemanddock')
+		Config.set('kivy', 'window_icon', self.icon)		
 		Config.write()
-
 		self.general_screen = GeneralScreen(name="General")
 		self.home_screen = HomeScreen(name="Home")
 		self.login_screen = LogInScreen(name="LogIn")
