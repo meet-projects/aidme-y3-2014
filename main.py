@@ -86,7 +86,7 @@ class AidMeApp(App):
 		sm.add_widget(self.singup_screen)
 		sm.add_widget(self.profile_screen)
 		sm.add_widget(self.general_screen)
-		sm.current = "LogIn"
+		sm.current = "Home"
 		
 		return sm
 
