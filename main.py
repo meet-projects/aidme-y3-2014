@@ -92,6 +92,9 @@ class AidMeApp(App):
 
 		Config.set('kivy','keyboard_mode','systemanddock')
 		Config.write()
+		print "window:"
+		self.width = Config.getint('graphics','width')
+		self.height= Config.getint('graphics','height')
 
 		self.general_screen = GeneralScreen(name="General")
 		self.home_screen = HomeScreen(name="Home")
