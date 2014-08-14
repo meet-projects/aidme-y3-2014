@@ -6,34 +6,23 @@ kivy.require('1.8.0')
 from kivy.uix.label import Label
 from kivy.app import App
 from kivy.uix.button import Button
-from kivy.uix.screenmanager import ScreenManager, Screen, NoTransition
+from kivy.uix.screenmanager import ScreenManager, Screen, NoTransition, SlideTransition
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.anchorlayout import AnchorLayout
 from kivy.config import Config
 from email.mime.text import MIMEText
 from kivy.uix.image import Image
+from kivy.uix.popup import Popup
+from kivy.graphics import *
 
 sm = ScreenManager(transition=NoTransition())
 
-# def send_email():
 
-# 	fp = open(textfile, 'rb')
-# 	# Create a text/plain message
-# 	msg = MIMEText(fp.read())
-# 	fp.close()
+class Slide(SlideTransition):
 
-# 	# me == the sender's email address
-# 	# you == the recipient's email address
-# 	msg['Subject'] = 'The contents of %s' % textfile
-# 	msg['From'] = me
-# 	msg['To'] = you
+	pass
 
-# 	# Send the message via our own SMTP server, but don't include the
-# 	# envelope header.
-# 	s = smtplib.SMTP('localhost')
-# 	s.sendmail(me, [you], msg.as_string())
-# 	s.quit()
 
 class SignUpB(Image):
     
@@ -76,26 +65,27 @@ class SignUpScreen(Screen):
 	pass
 
 class MapScreen(Screen):
+	
 	pass
 
-	
+
 class MapI(Image):
+
 	pass
 
 class ProfileScreen(Screen):
-
 	pass
 
-class AidMeApp(App):
 
+class AidMeApp(App):
+	
 	def build(self):
 
-		Config.set('kivy','keyboard_mode','systemanddock')
+		Config.set('kivy','keyboard_mode','')
 		Config.write()
 		print "window:"
 		self.width = Config.getint('graphics','width')
 		self.height= Config.getint('graphics','height')
-
 		self.general_screen = GeneralScreen(name="General")
 		self.home_screen = HomeScreen(name="Home")
 		self.login_screen = LogInScreen(name="LogIn")
@@ -108,19 +98,19 @@ class AidMeApp(App):
 		sm.add_widget(self.singup_screen)
 		sm.add_widget(self.profile_screen)
 		sm.add_widget(self.general_screen)
-		sm.current = "LogIn"
+		sm.current = "Home"
 		
 		return sm
 
 	def submit_clicked(self, id2):
+		
+		if id2 == "ProfileB":
 
-		if id2 == "HelpB" :
-
-			pass
-
-		elif id2 == "ProfileB":
+			sm.transition = SlideTransition(direction="right")
 
 			sm.current = "Profile"
+
+			sm.transtion = NoTransition()
 
 		elif id2 == "InstructionsB":
 
@@ -136,13 +126,48 @@ class AidMeApp(App):
 
 		elif id2 == "HomeB":
 
+			sm.transition = SlideTransition(direction="right")
+
 			sm.current = "Home"
+
+			sm.transtion = NoTransition()
+
+		elif id2 == "HomeB1":
+
+			sm.transition = SlideTransition(direction="left")
+
+			sm.current = "Home"
+
+			sm.transtion = NoTransition()
 
 		elif id2 == "LogOutB":
 
+			sm.transition = NoTransition()
+
+			sm.remove_widget(self.login_screen)
+			self.login_screen = LogInScreen(name="LogIn")
+			sm.add_widget(self.login_screen)
 			sm.current = "LogIn"
+		
 		elif id2 == "MapB":
+
+			sm.transition = SlideTransition(direction="left")
+			
 			sm.current = "Map"
+
+			sm.transtion = NoTransition()
+
+		elif id2 == "HelpB":
+			b = Button(text='Dismiss',size= (100,100), size_hint=(1,None))
+#			back.add_widget(Color(rgba=[1,1,1,1]))
+#			back.add_widget(Rectangle(pos = self.pos, size=self.size))
+			content = BoxLayout(orientation='vertical', size_hint=(1,1), size=(1,300))
+			popup = Popup( title="",content=content,size_hint=(0.5, 0.5),id="Popup")
+			content.add_widget(Label(text='Help is on the way!',font_size='20sp',bold=True))
+			content.add_widget(b)
+			b.bind(on_press=popup.dismiss)
+
+			popup.open()
 
 if __name__=="__main__":
 	AidMeApp().run()
